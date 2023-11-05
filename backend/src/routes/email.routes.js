@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const userController = require('../controllers/user.controller');
+const emailController = require('../controllers/email.controller');
 
-router.post('/register', userController.register);
-router.post('/login', userController.login);
+router.post('/send', emailController.sendEmail);
+router.get('/inbox/:userId', emailController.getInbox);
 
-// Additional routes will go here
+// Additional routes can be added here
 
 module.exports = router;
